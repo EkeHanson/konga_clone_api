@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-d9nd6g*r!r8q@&6fqaicgqvylnv_@9*vy*o15bx$n+%zb@n@@a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '']
+ALLOWED_HOSTS = ['127.0.0.1', 'konga-clone-api.onrender.com']
 
 # Configure CORS
 CORS_ALLOWED_ORIGINS = [
