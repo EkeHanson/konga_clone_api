@@ -6,10 +6,7 @@ from decimal import Decimal
 from .models import OrderGrabbing
 from .serializers import  OrderGrabbingSerializer
 
-# class OrderViewSet(viewsets.ModelViewSet):
-#     queryset = Order.objects.all()
-#     serializer_class = OrderSerializer
-#     permission_classes = [AllowAny]
+
 
 class OrderGrabbingViewSet(viewsets.ModelViewSet):
     queryset = OrderGrabbing.objects.all()
@@ -64,9 +61,9 @@ class OrderGrabbingViewSet(viewsets.ModelViewSet):
                     user.commission1 += Decimal(200)
             
             if  user.grabbed_orders_count == 0:
-                user.unsettle = Decimal(700) +  Decimal(140)
+                user.unsettle += Decimal(700) +  Decimal(140)
             elif  user.grabbed_orders_count == 1:
-                user.unsettle = Decimal(800) +  Decimal(160)
+                user.unsettle += Decimal(800) +  Decimal(160)
             else:
                 user.unsettle +=  Decimal(1000) +  Decimal(200)
 
