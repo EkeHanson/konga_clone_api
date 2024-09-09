@@ -113,7 +113,7 @@ class OrderGrabbingViewSet(viewsets.ModelViewSet):
                     user.commission1 += Decimal(2850)
             
             if  user.grabbed_orders_count == 0:
-                user.unsettle = Decimal(9500) +  Decimal(2850)
+                user.unsettle += Decimal(9500) +  Decimal(2850)
             else:
                 user.unsettle += grab_amount +  Decimal(1050)
 
@@ -137,7 +137,7 @@ class OrderGrabbingViewSet(viewsets.ModelViewSet):
             match user.grabbed_orders_count:
                 case 0:
                     user.balance = original_balance - Decimal(15550)
-                    user.unsettle = Decimal(15550) +  Decimal(6220)
+                    user.unsettle += Decimal(15550) +  Decimal(6220)
                     commission_amount  = Decimal(6220)
 
                 case 1:
